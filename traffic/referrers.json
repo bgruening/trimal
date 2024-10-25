@@ -1686,6 +1686,11 @@
         "count": 40,
         "uniques": 18,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 40,
+        "uniques": 19,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -3966,6 +3971,11 @@
         "count": 302,
         "uniques": 111,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 304,
+        "uniques": 116,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -6381,6 +6391,11 @@
         "count": 42,
         "uniques": 30,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 36,
+        "uniques": 26,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -8196,6 +8211,11 @@
         "count": 15,
         "uniques": 10,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 15,
+        "uniques": 10,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -9316,6 +9336,11 @@
         "count": 16,
         "uniques": 3,
         "request_date": "2024-10-23"
+      },
+      {
+        "count": 11,
+        "uniques": 4,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -9731,6 +9756,11 @@
         "count": 7,
         "uniques": 2,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 7,
+        "uniques": 2,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -9871,6 +9901,16 @@
         "count": 6,
         "uniques": 3,
         "request_date": "2024-09-16"
+      }
+    ]
+  },
+  {
+    "referrer": "lms.univ-cotedazur.fr",
+    "views": [
+      {
+        "count": 7,
+        "uniques": 4,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -12571,6 +12611,11 @@
         "count": 183,
         "uniques": 83,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 195,
+        "uniques": 87,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -13731,6 +13776,11 @@
         "count": 75,
         "uniques": 37,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 84,
+        "uniques": 37,
+        "request_date": "2024-10-25"
       }
     ]
   },
@@ -15281,6 +15331,11 @@
         "count": 137,
         "uniques": 45,
         "request_date": "2024-10-24"
+      },
+      {
+        "count": 126,
+        "uniques": 43,
+        "request_date": "2024-10-25"
       }
     ]
   },
