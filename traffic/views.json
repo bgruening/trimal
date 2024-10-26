@@ -1,5 +1,5 @@
 {
-  "count": 25981,
+  "count": 26041,
   "views": [
     {
       "dailyUniques": 5,
@@ -1722,9 +1722,14 @@
       "count": 98
     },
     {
-      "dailyUniques": 14,
+      "dailyUniques": 35,
       "date": "2024-10-25",
-      "count": 24
+      "count": 75
+    },
+    {
+      "dailyUniques": 5,
+      "date": "2024-10-26",
+      "count": 9
     }
   ]
 }
