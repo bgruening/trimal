@@ -1,5 +1,5 @@
 {
-  "count": 26222,
+  "count": 26735,
   "views": [
     {
       "dailyUniques": 5,
@@ -1742,9 +1742,39 @@
       "count": 75
     },
     {
-      "dailyUniques": 9,
+      "dailyUniques": 32,
       "date": "2024-10-29",
-      "count": 26
+      "count": 103
+    },
+    {
+      "dailyUniques": 40,
+      "date": "2024-10-30",
+      "count": 78
+    },
+    {
+      "dailyUniques": 50,
+      "date": "2024-10-31",
+      "count": 97
+    },
+    {
+      "dailyUniques": 25,
+      "date": "2024-11-01",
+      "count": 72
+    },
+    {
+      "dailyUniques": 20,
+      "date": "2024-11-02",
+      "count": 27
+    },
+    {
+      "dailyUniques": 19,
+      "date": "2024-11-03",
+      "count": 79
+    },
+    {
+      "dailyUniques": 17,
+      "date": "2024-11-04",
+      "count": 83
     }
   ]
 }

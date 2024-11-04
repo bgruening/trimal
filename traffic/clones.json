@@ -1,5 +1,5 @@
 {
-  "count": 3912,
+  "count": 3935,
   "clones": [
     {
       "dailyUniques": 3,
@@ -1742,9 +1742,39 @@
       "count": 6
     },
     {
-      "dailyUniques": 1,
+      "dailyUniques": 2,
       "date": "2024-10-29",
-      "count": 1
+      "count": 2
+    },
+    {
+      "dailyUniques": 6,
+      "date": "2024-10-30",
+      "count": 6
+    },
+    {
+      "dailyUniques": 2,
+      "date": "2024-10-31",
+      "count": 2
+    },
+    {
+      "dailyUniques": 4,
+      "date": "2024-11-01",
+      "count": 4
+    },
+    {
+      "dailyUniques": 4,
+      "date": "2024-11-02",
+      "count": 4
+    },
+    {
+      "dailyUniques": 2,
+      "date": "2024-11-03",
+      "count": 2
+    },
+    {
+      "dailyUniques": 4,
+      "date": "2024-11-04",
+      "count": 4
     }
   ]
 }
