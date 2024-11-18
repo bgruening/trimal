@@ -108,6 +108,10 @@ Alignment *Cleaner::cleanByCutValueOverpass(
     int residueIndex, numberColumnsToRecover, *keptResiduesGaps;
     int oldNumberKeptResidues = 0, newNumberKeptResidues = 0;
     Alignment *newAlig = new Alignment(*alig);
+    double gapThreshold = maxGaps / alig->originalNumberOfResidues;
+
+    debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string((int) maxGaps), std::to_string(gapThreshold)});
+
 
     // Select the columns with a gaps value
     // less or equal than the cut point.
@@ -529,6 +533,12 @@ Alignment *Cleaner::cleanStrict(int gapCut, const int *gInCol, float simCut, con
 
     int i, x, pos, counter, lenBlock;
     Alignment *newAlig = new Alignment(*alig);
+
+    double gapThreshold = (double) gapCut / alig->originalNumberOfResidues;
+
+    debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string(gapCut), std::to_string(gapThreshold)});
+
+    debug.report(InfoCode::SimilarityThreshold, new std::string[1]{std::to_string(simCut)});
 
 
     // Reject columns with gaps number greater than the gap threshold.

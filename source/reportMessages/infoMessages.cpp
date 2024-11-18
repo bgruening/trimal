@@ -50,5 +50,11 @@ const std::map<InfoCode, const char *> reporting::reportManager::InfoMessages =
                 "Using \"[tag]\" CPU extensions to compute statistics."},
 
     {InfoCode::OnlyReadAndWrite,
-                "No filtering or calculation performed. Output same MSA as input."}
+                "No filtering or calculation performed. Output same MSA as input."},
+
+    {InfoCode::GapThreshold,
+                "The maximum amount of gaps is \"[tag]\". The threshold value used is \"[tag]\"."},
+
+    {InfoCode::SimilarityThreshold,
+                "The similarity threshold value used is \"[tag]\"."}
 };
