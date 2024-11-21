@@ -53,8 +53,10 @@ const std::map<InfoCode, const char *> reporting::reportManager::InfoMessages =
                 "No filtering or calculation performed. Output same MSA as input."},
 
     {InfoCode::GapThreshold,
-                "The maximum amount of gaps is \"[tag]\". The threshold value used is \"[tag]\"."},
+                "The maximum amount of gaps is \"[tag]\". The threshold value used is \"[tag]\". Column/sequence trimming may be affected by other parameters (e.g."
+                " conservation threshold)."},
 
     {InfoCode::SimilarityThreshold,
-                "The similarity threshold value used is \"[tag]\"."}
+                "The similarity threshold value used is \"[tag]\". Column/sequence trimming may be affected by other parameters (e.g."
+                " conservation threshold)."}
 };
