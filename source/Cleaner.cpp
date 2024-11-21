@@ -255,6 +255,8 @@ Alignment *Cleaner::cleanByCutValueFallBehind(
     int i, j, k, jn, oth, block = 0, residues;
     Alignment *newAlig = new Alignment(*alig);
 
+    debug.report(InfoCode::SimilarityThreshold, new std::string[1]{std::to_string(cut)});
+
     // Select the columns with a gaps value
     // less or equal than the cut point.
     //
@@ -535,11 +537,7 @@ Alignment *Cleaner::cleanStrict(int gapCut, const int *gInCol, float simCut, con
     Alignment *newAlig = new Alignment(*alig);
 
     double gapThreshold = (double) gapCut / alig->originalNumberOfResidues;
-
     debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string(gapCut), std::to_string(gapThreshold)});
-
-    debug.report(InfoCode::SimilarityThreshold, new std::string[1]{std::to_string(simCut)});
-
 
     // Reject columns with gaps number greater than the gap threshold.
     for (i = 0; i < alig->originalNumberOfResidues; i++) {
