@@ -108,9 +108,9 @@ Alignment *Cleaner::cleanByCutValueOverpass(
     int residueIndex, numberColumnsToRecover, *keptResiduesGaps;
     int oldNumberKeptResidues = 0, newNumberKeptResidues = 0;
     Alignment *newAlig = new Alignment(*alig);
-    double gapThreshold = maxGaps / alig->originalNumberOfSequences;
-
-    debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string((int) maxGaps), std::to_string(gapThreshold)});
+    
+    double maxGapThreshold = ((double) maxGaps / alig->originalNumberOfSequences) * 100.0;
+    debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string((int) maxGaps), std::to_string(maxGapThreshold)});
 
     // Select the columns with a gaps value
     // less or equal than the cut point.
@@ -238,9 +238,10 @@ Alignment *Cleaner::cleanByCutValueOverpass(
     // Compute new sequences and columns numbers
     newAlig->Cleaning->removeAllGapsSeqsAndCols();
 
+
+
     // Return the new alignment reference
     return newAlig;
-
 }
 
 Alignment *Cleaner::cleanByCutValueFallBehind(
@@ -535,14 +536,30 @@ Alignment *Cleaner::cleanStrict(int gapCut, const int *gInCol, float simCut, con
     int i, x, pos, counter, lenBlock;
     Alignment *newAlig = new Alignment(*alig);
 
-    double gapThreshold = (double) gapCut / alig->originalNumberOfSequences;
-    debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string(gapCut), std::to_string(gapThreshold)});
+    double maxGapThreshold = ((double) gapCut / alig->originalNumberOfSequences) * 100.0;
+    debug.report(InfoCode::GapThreshold, new std::string[2]{std::to_string(gapCut), std::to_string(maxGapThreshold)});
+    debug.report(InfoCode::SimilarityThreshold, new std::string[1]{std::to_string(simCut)});
 
     // Reject columns with gaps number greater than the gap threshold.
-    for (i = 0; i < alig->originalNumberOfResidues; i++) {
-        if (gInCol[i] > gapCut || MDK_W[i] < simCut)
-            newAlig->saveResidues[i] = -1;
+    int residueIndex = 0;
+    int oldNumberKeptResidues = 0;
+    int newNumberKeptResidues = 0;
+    for (residueIndex = 0; residueIndex < alig->originalNumberOfResidues; residueIndex++) {
+        if (alig->saveResidues[residueIndex] == -1) continue;
+
+        if (gInCol[residueIndex] > gapCut || MDK_W[residueIndex] < simCut) {
+            newAlig->saveResidues[residueIndex] = -1;
+        } else {
+            newNumberKeptResidues++;
+        }
+
+        oldNumberKeptResidues++;
     }
+
+    double percentageColumnsOriginal = ((double) oldNumberKeptResidues / alig->originalNumberOfResidues) * 100.0;
+    debug.report(InfoCode::ColumnsToKeep, new std::string[3]{"before strict method", std::to_string(oldNumberKeptResidues), std::to_string(percentageColumnsOriginal)});
+    percentageColumnsOriginal = ((double) newNumberKeptResidues / alig->originalNumberOfResidues) * 100.0;
+    debug.report(InfoCode::ColumnsToKeep, new std::string[3]{"after strict method clean based on gaps and similarity", std::to_string(newNumberKeptResidues), std::to_string(percentageColumnsOriginal)});
 
     // Rescue residues based on their neighbouring residues. We are going to rescue those residues that would be rejected but have at least, 3 non-rejected residues.
     {
@@ -726,6 +743,10 @@ Alignment *Cleaner::cleanStrict(int gapCut, const int *gInCol, float simCut, con
     // Check for any additional column/sequence to be removed
     // Compute new sequences and columns numbers
     newAlig->Cleaning->removeAllGapsSeqsAndCols();
+
+    percentageColumnsOriginal = ((double) newAlig->numberOfResidues / alig->originalNumberOfResidues) * 100.0;
+    debug.report(InfoCode::BlockSize, new std::string[1]{std::to_string(blockSize)});
+    debug.report(InfoCode::ColumnsToKeep, new std::string[3]{"after strict method recovered neighbours and filtered by block size", std::to_string(newAlig->numberOfResidues), std::to_string(percentageColumnsOriginal)});
 
     return newAlig;
 }

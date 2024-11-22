@@ -313,6 +313,10 @@ enum InfoCode {
 
     SimilarityThreshold                         = 8,
 
+    ColumnsToKeep                               = 9,
+
+    BlockSize                                   = 10,
+
 
     __MAXINFO
 };
